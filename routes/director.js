@@ -113,4 +113,26 @@ router.get('/:director_id',(req, res) => {
   })
 });
 
+
+router.put('/:director_id', (req,res, next) => {
+  const promise = Director.findByIdAndUpdate(req.params.director_id, req.body,{new: true});
+  promise.then((director) => {
+    res.json(director);
+  }).catch((err) => {
+    if(err.message.indexOf('Cast to ObjectId failed') !== -1)
+      next({message: 'Director Not Found.', code: 2002});
+    console.log(err);
+  });
+});
+
+router.delete('/:director_id', (req,res, next) => {
+  const promise = Director.findByIdAndRemove(req.params.director_id);
+  promise.then((director) => {
+    res.json(director);
+  }).catch((err) => {
+    if(err.message.indexOf('Cast to ObjectId failed') !== -1)
+      next({message: 'Director Not Found.', code: 2002});
+    console.log(err);
+  });
+});
 module.exports = router;
