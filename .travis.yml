@@ -10,4 +10,4 @@ before_install:
 script:
   - npm run test
 
-  os: windows
+os: windows
