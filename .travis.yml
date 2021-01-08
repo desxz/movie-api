@@ -9,4 +9,3 @@ before_install:
 script:
   - npm test
 
-os: windows
