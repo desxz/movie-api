@@ -5,12 +5,7 @@ node_js:
 
 before_install:
   - npm install
-  - npm install mocha -g -dev
-  - npm install chai -g -dev
-  - npm install chai-http -g -dev
   - export NODE_ENV=production
 
 script:
   - npm run test
-
-os: windows
