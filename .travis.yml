@@ -5,11 +5,12 @@ node_js:
 
 before_install:
   - npm install mocha -g --save-dev
+  - npm install chai -g --save-dev
   - npm install
   - export NODE_ENV=production
   - npm list
 
 script:
-  - npm run test
+  - npm test
 
 os: windows
