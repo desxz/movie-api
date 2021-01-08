@@ -102,6 +102,7 @@ router.get('/:director_id',(req, res) => {
         name: '$_id.name',
         surname: '$_id.surname',
         movies: '$movies',
+        bio:'$_id.bio'
       }
     }
   ]);
