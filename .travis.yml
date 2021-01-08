@@ -2,9 +2,6 @@ language: node_js
 node_js:
   - "15"
 before_install:
-  - npm install mocha -g
-  - npm install chai -g
-  - npm install chai-http -g
   - npm install
   - export NODE_ENV=production
 script:
